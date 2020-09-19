@@ -9,9 +9,9 @@ def main():
    return render_template('/index.html')
 
 @app.route('/about')
-def main():
+def about():
    return render_template('/about.html')
 
 @app.route('/talentrics')
-def main():
+def talentrics():
    return render_template('/talentrics.html')
