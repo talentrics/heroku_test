@@ -15,3 +15,7 @@ def about():
 @app.route('/talentrics')
 def talentrics():
    return render_template('/talentrics.html')
+
+@app.route('/danielbmacdonald')
+def danielbmacdonald():
+   return render_template('/danielbmacdonald.html')
