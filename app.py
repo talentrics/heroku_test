@@ -19,3 +19,15 @@ def talentrics():
 @app.route('/danielbmacdonald')
 def danielbmacdonald():
    return render_template('/danielbmacdonald.html')
+
+@app.route('/github')
+def github():
+   return render_template('/github.html')
+
+@app.route('/guide')
+def guide():
+   return render_template('/guide.html')
+
+@app.route('/tutorial')
+def tutorial():
+   return render_template('/tutorial.html')
