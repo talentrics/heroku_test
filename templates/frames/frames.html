@@ -74,6 +74,14 @@
   <script src="{{ url_for('static', filename='js/app.js') }}"></script>
   {% block script %}{% endblock %}
 
+<!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+
 </body>
 
 </html>
