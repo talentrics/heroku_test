@@ -37,8 +37,8 @@ def tutorial():
    return render_template('/tutorial.html')
 
 @app.route('/graph', method=['POST'])
-   def graph():
-    # if request.method == 'POST':
+def graph():
+   # if request.method == 'POST':
    app.vars['symbol'] = request.form['symbol']
 
    API_URL = "https://www.alphavantage.co/query" 
