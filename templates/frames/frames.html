@@ -12,13 +12,7 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/simple-sidebar.css') }}">
 
   <!-- Import bokeh stylesheets & js -->
-  <link rel="stylesheet" href="https://cdn.bokeh.org/bokeh/release/bokeh-2.2.1.min.css" type="text/css" />
-  <link rel="stylesheet" href="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.2.1.min.css" type="text/css" />
-  <link rel="stylesheet" href="https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.2.1.min.css" type="text/css">
-  <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.2.1.min.js"></script>
-  <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-api-2.2.1.min.js"></script>
-  <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.2.1.min.js"></script>
-  <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.2.1.min.js"></script>
+  {% block bokeh %}{% endblock %}
 
   <title>{% block title %}{% endblock %}</title>
 </head>
