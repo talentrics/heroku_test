@@ -2,7 +2,7 @@ from flask import Flask,render_template,request,redirect
 
 import pandas as pd
 from threading import Thread
-import json
+from simplejson import json
 import requests
 import datetime
 import jinja2
