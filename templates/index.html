@@ -8,7 +8,9 @@
   <div class="row">
     <div class="col">
       <h1 style="padding-top: 10px">Home</h1>
-      	<p style="padding-top: 10px">this widget is designed to pull in the last month of closing stock prices for a particular stock using the alphavantage API.  If you want to learn more about the purpose of this project and how it is designed, please visit the 'about project' page in the left navbar, or the step by step tutorial and programming guidance on the top right of your screen.</p>
+      	<p style="padding-top: 10px">this widget is designed to pull in the last month of closing stock prices for a particular stock using the Alphavantage API.  <br>
+  		If you want to learn more about this project and its design, please visit the 'about project' page in the left navbar.<br>
+  		I have also created a step by step tutorial and programming guidance on the top right corner under 'Project Details'.</p>
 	  <hr>
 	  	<p>in the space below, enter your selected stock to review, and select 'submit':</p>
 
@@ -23,6 +25,15 @@
 
 			</form>
 
+	  <div id="myplot"></div>
+
+		<script>
+		fetch('/plot')
+		    .then(function(response) { return response.json(); })
+		    .then(function(item) { Bokeh.embed.embed_item(item); })
+		</script>
+
+	  </div>
     </div>
   </div>
 </div>
