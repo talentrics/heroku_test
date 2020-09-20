@@ -4,9 +4,13 @@ app = Flask(__name__)
 
 app.vars={}
 
-@app.route('/'), methods=["GET", "POST"])
+@app.route('/')
 def main():
-	return render_template("/index.html")
+	return redirect("/index")
+
+@app.route('/index', method=['GET'])
+def index():
+   return render_template('index.html')
 
 @app.route('/about')
 def about():
@@ -32,11 +36,8 @@ def guide():
 def tutorial():
    return render_template('/tutorial.html')
 
-@app.route('/graph')
+@app.route('/graph', method=['POST'])
    def graph():
-    p = make_plot('petal_width', 'petal_length')
-    return json.dumps(json_item(p, "myplot"))
-
     # if request.method == 'POST':
    app.vars['symbol'] = request.form['symbol']
 
