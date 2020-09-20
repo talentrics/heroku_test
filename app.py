@@ -8,7 +8,7 @@ app.vars={}
 def main():
 	return redirect("/index")
 
-@app.route('/index', method=['GET'])
+@app.route('/index', methods=['GET'])
 def index():
    return render_template('index.html')
 
@@ -36,7 +36,7 @@ def guide():
 def tutorial():
    return render_template('/tutorial.html')
 
-@app.route('/graph', method=['POST'])
+@app.route('/graph', methods=['POST'])
 def graph():
    # if request.method == 'POST':
    app.vars['symbol'] = request.form['symbol']
