@@ -1,42 +1,10 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-     <meta name="description" content="">
-     <meta name="keywords" content="">
-     <meta name="team" content="">
-     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+{% extends "frames/frames.html" %}
 
-     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	  
-    <link rel="stylesheet" href="https://cdn.bokeh.org/bokeh/release/bokeh-2.2.1.min.css" type="text/css" />
-    <link rel="stylesheet" href="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.2.1.min.css" type="text/css" />
-    <link rel="stylesheet" href="https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.2.1.min.css" type="text/css">
-    <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.2.1.min.js"></script>
-    <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-api-2.2.1.min.js"></script>
-    <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.2.1.min.js"></script>
-    <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.2.1.min.js"></script>
-  </head>
-  <body>
-	  <body style="background-color:#CCCC99;">
-     <!-- PRE LOADER -->
-     <section class="preloader">
-          <div class="spinner">
+{% block title %}Home{% endblock %}
 
-               <span class="spinner-rotate"></span>
-               
-          </div>
-     </section>
-		  
-	<section class="navbar custom-navbar navbar-fixed-top" role="navigation">
+{% block main %}
+
           <div class="container">
-
-               <div class="navbar-header">
-            
-                   <a href="https://macdonald-tdi-ticker.herokuapp.com/index.html" class="navbar-brand">Home</a>
-				   <a href="index.html" class="navbar-brand">Link2</a>
-				   <a href="index.html" class="navbar-brand">Link3</a>
 
           </div>
      </section>
@@ -50,5 +18,5 @@
     </div>
   {{ div | safe }}
   {{ script | safe }}
-  </body>
-</html>
+
+{% endblock %}
