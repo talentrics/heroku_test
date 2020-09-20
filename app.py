@@ -1,5 +1,20 @@
 from flask import Flask,render_template,request,redirect
 
+import pandas as pd
+from threading import Thread
+import simplejson as json
+import requests
+import datetime
+import jinja2
+
+from bokeh.embed import server_document, components 
+from bokeh.layouts import column
+from bokeh.models import ColumnDataSource, HoverTool, TextInput, CustomJS
+from bokeh.io import curdoc
+from bokeh.plotting import figure, output_file, show
+from bokeh.server.server import Server
+from bokeh.themes import Theme
+
 app = Flask(__name__)
 
 app.vars={}
@@ -67,31 +82,6 @@ def graph():
    p.axis.axis_line_color = None
    p.title.text_font = "Times"
    p.title.text_font_size = "20px"
-
-   if request.form.get('Open'):
-      p.line(df1['index'], df1['Open'], line_width=2, line_color='blue', legend_label='Open')
-
-   if request.form.get('Close'):
-      p.line(df1['index'], df1['Close'], line_width=2, line_color='green', legend_label='Close')
-
-   # if request.form.get('Adj Close'):
-   #    p.line(df1['index'], df1['Adj Close'], line_width=2, line_color='red')
-
-   # p.add_tools(HoverTool(
-   #    tooltips=[
-   #       ( 'Date',   '@x{%F}'     ),
-   #       ( 'Open',  '$@y{%0.2f}' ),
-   #       ( 'Close',  '$@y{%0.2f}' ),
-   #       ( 'Adj Close',  '$@y{%0.2f}' ),
-   #    ],
-
-   #    formatters={
-   #       '@x'      : 'datetime',
-   #       '@y'     : 'printf',
-   #    },
-
-   #    mode='vline'
-   # ))
 
    script, div = components(p)
    return render_template('graph.html', script=script, div=div)
