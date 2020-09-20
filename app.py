@@ -84,10 +84,10 @@ def graph():
    p.title.text_font_size = "20px"
 
    if request.form.get('Open'):
-      p.line(df1['index'], df1['Open'], line_width=2, line_color='blue', legend_label='Open')
+      p.line(df1['index'], df1['Open'], line_width=2, line_color='blue')
 
    if request.form.get('Close'):
-      p.line(df1['index'], df1['Close'], line_width=2, line_color='green', legend_label='Close')
+      p.line(df1['index'], df1['Close'], line_width=2, line_color='green')
 
 
    script, div = components(p)
