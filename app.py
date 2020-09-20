@@ -73,7 +73,7 @@ def graph():
    df = df.loc[mask]
    df1 = df[[ 'index', 'Open', 'Close', 'Adj Close']]
 
-   p = figure(plot_width=800 ,plot_height=800, x_axis_type="datetime")
+   p =figure(plot_width=800 ,plot_height=800, x_axis_type="datetime")
    p.background_fill_color="#f5f5f5"
    p.grid.grid_line_color="white"
    p.title.text = 'Monthly Stock Data of %s' % app.vars['symbol'].upper()
@@ -82,6 +82,13 @@ def graph():
    p.axis.axis_line_color = None
    p.title.text_font = "Times"
    p.title.text_font_size = "20px"
+
+   if request.form.get('Open'):
+      p.line(df1['index'], df1['Open'], line_width=2, line_color='blue', legend_label='Open')
+
+   if request.form.get('Close'):
+      p.line(df1['index'], df1['Close'], line_width=2, line_color='green', legend_label='Close')
+
 
    script, div = components(p)
    return render_template('graph.html', script=script, div=div)
