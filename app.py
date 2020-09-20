@@ -85,3 +85,6 @@ def graph():
 
    script, div = components(p)
    return render_template('graph.html', script=script, div=div)
+
+if __name__ == '__main__':
+app.run(port=33507)
